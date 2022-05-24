@@ -14,16 +14,30 @@ El máximo es 9
 let ingresos: boolean = false;
 let num: number = Number(prompt("Ingrese un número que desee"));
 let numMax: number = num;
+let númeroMínimo: number = num;
 
-while (num != 0) {
+while (num !== 0) {
   ingresos = true;
 
   if (num > numMax) {
     numMax = num;
-
-    let num = Number(prompt("Ingrese otro número que desee"));
   }
-}
-//console.log(`Se ingreso ${menor} como número menor`);
-console.log(`Se ingreso ${numMax} como número mayor`);
-//tengo un problema de scoops ;(
+   num = Number(prompt("Ingrese otro número que desee"));
+  }
+
+  if (ingresos) {
+    console.log("El número máximo es: " + numMax);
+  }
+  
+    while (num !== 0) {
+    ingresos = true;
+    if (num < númeroMínimo) {
+      númeroMínimo = num;
+    }
+    num = Number(prompt("Ingrese un número"));
+  }
+  
+  if (ingresos) {
+    console.log("El número mínimo es: " + númeroMínimo);
+  }
+
